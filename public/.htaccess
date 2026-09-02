@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Si el archivo/carpeta existe, Apache lo sirve directamente.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# El resto pasa al router principal.
+RewriteRule ^ index.php [QSA,L]
